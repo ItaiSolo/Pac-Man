@@ -46,10 +46,26 @@ class Game:
         then update the screen
         """
 
+        self.draw_on_grid(0, 0, (0xff, 0xff, 0xff))
+
         # update the screen
         pygame.display.update()
 
 
+    def draw_on_grid(self, row, column, color):
+        """
+        fills a square on the screen grid.
+
+        note:
+            0 <= row < GRID_SIZE[0]
+            0 <= column < GRID_SIZE[1]
+
+            color is a tuple of rgb
+        """
+
+        rect = (row * SQUARE_SIZE[0], column * SQUARE_SIZE[1], SQUARE_SIZE[0], SQUARE_SIZE[1])
+        pygame.draw.rect(self.screen, color, rect)
+        
     def mainloop(self):
 
         self.running = True

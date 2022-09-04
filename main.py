@@ -1,3 +1,5 @@
+#!/bin/python3
+
 import game
 
 if __name__ == '__main__':
