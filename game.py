@@ -42,7 +42,7 @@ class Game:
 
     def render_stuff(self):
         """
-        draw on the screen everything that needs to be drawn
+        draw on the screen everything that needs to be drawn(player,etc)
         then update the screen
         """
 

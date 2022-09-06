@@ -13,7 +13,7 @@ SCREEN_SIZE = (600, 600)
 WINDOW_TITLE = "pygame pacman"
 
 # frame per seconds
-FPS = 30
+FPS = 120
 
 ##########################
 # DO NOT TOUCH FROM HERE #
