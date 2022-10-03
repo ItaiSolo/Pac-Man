@@ -1,7 +1,6 @@
 """
 a game class to maintain the pygame stuff easily
 """
-
 import pygame
 
 # import all game constants
@@ -45,9 +44,18 @@ class Game:
         draw on the screen everything that needs to be drawn(player,etc)
         then update the screen
         """
-
-        self.draw_on_grid(0, 0, (0xff, 0xff, 0xff))
-
+        
+        #drow limits
+        for row in range(0,SCREEN_SIZE[0]):           #row
+            for col in range(0,SCREEN_SIZE[1]):       #col
+                if(row == 0 or row == Last or col == 0 or col == Last):
+                    self.draw_on_grid(row, col, (0xff, 0xff, 0xff))
+                 
+        for row in range(0,SCREEN_SIZE[0]):           #row
+            for col in range(0,SCREEN_SIZE[1]):       #col
+                if(row == 4 and (2<col<5 or 8<col<14 or 16<col<22 or 24<col<27)):
+                    self.draw_on_grid(row, col,Blue)
+            
         # update the screen
         pygame.display.update()
 
@@ -63,7 +71,7 @@ class Game:
             color is a tuple of rgb
         """
 
-        rect = (row * SQUARE_SIZE[0], column * SQUARE_SIZE[1], SQUARE_SIZE[0], SQUARE_SIZE[1])
+        rect = (column * SQUARE_SIZE[0], row * SQUARE_SIZE[1], SQUARE_SIZE[0], SQUARE_SIZE[1])
         pygame.draw.rect(self.screen, color, rect)
         
     def mainloop(self):
